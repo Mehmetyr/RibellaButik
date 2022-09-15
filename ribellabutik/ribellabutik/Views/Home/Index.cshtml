@@ -1,0 +1,222 @@
+﻿@model IEnumerable<ribellabutik.Models.Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/custom.css" rel="stylesheet" />
+    <link href="~/Content/css/fontawesome.css" rel="stylesheet" />
+    <link href="~/Content/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="~/Content/css/slick-theme.css" rel="stylesheet" />
+    <link href="~/Content/css/slick-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/css/slick.min.css" rel="stylesheet" />
+    <link href="~/Content/css/templatemo.css" rel="stylesheet" />
+    <link href="~/Content/css/templatemo.min.css" rel="stylesheet" />
+    <script src="~/Content/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/js/custom.js"></script>
+    <script src="~/Content/js/jquery-1.11.0.min.js"></script>
+    <script src="~/Content/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="~/Content/js/slick.min.js"></script>
+    <script src="~/Content/js/templatemo.js"></script>
+    <script src="~/Content/js/templatemo.min.js"></script>
+    <a href="~/Content/webfonts/fa-brands-400.eot"></a>
+    <a href="~/Content/webfonts/fa-brands-400.ttf"></a>
+    <a href="~/Content/webfonts/fa-brands-400.woff"></a>
+    <a href="~/Content/webfonts/fa-brands-400.woff2"></a>
+    <a href="~/Content/webfonts/fa-regular-400.eot"></a>
+    <a href="~/Content/webfonts/fa-regular-400.ttf"></a>
+    <a href="~/Content/webfonts/fa-regular-400.woff"></a>
+    <a href="~/Content/webfonts/fa-regular-400.woff2"></a>
+    <a href="~/Content/webfonts/fa-solid-900.eot"></a>
+    <a href="~/Content/webfonts/fa-solid-900.ttf"></a>
+    <a href="~/Content/webfonts/fa-solid-900.woff"></a>
+    <a href="~/Content/webfonts/fa-solid-900.woff2"></a>
+    <a href="~/Content/webfonts/slick.eot"></a>
+    <a href="~/Content/webfonts/slick.ttf"></a>
+    <a href="~/Content/webfonts/slick.woff"></a>
+</head>
+<body>
+
+    <!-- Modal -->
+    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="w-100 pt-1 mb-5 text-right">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" method="get" class="modal-content modal-body border-0 p-0">
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
+                    <button type="submit" class="input-group-text bg-success text-light">
+                        <i class="fa fa-fw fa-search text-white"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <!-- Start Banner Hero -->
+    <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="1"></li>
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="container">
+                    <div class="row p-5">
+                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                            <img class="img-fluid" src="~/Images/580b57fbd9996e24bc43bf30.png" alt="">
+                        </div>
+                        <div class="col-lg-6 mb-0 d-flex align-items-center">
+                            <div class="text-align-left align-self-center">
+                                <h1 class="h1 text-success"><b>Ribella</b> Sizlerle!</h1>
+                                <h3 class="h2">Aradığınız Her Şey Burada</h3>
+                                <p>
+                                    Araığın Kalite <span>Ribellada</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="row p-5">
+                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                            <img class="img-fluid" src="~/Images/580b57fbd9996e24bc43bef4.png" alt="">
+                        </div>
+                        <div class="col-lg-6 mb-0 d-flex align-items-center">
+                            <div class="text-align-left">
+                                <h1 class="h1">Christina Hendricks</h1>
+                                <h3 class="h2">Oyuncu</h3>
+                                <p>
+                                    Moda için saçımı 42 farklı renge boyadım. Gerekirse 142 renge boyarım. 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="row p-5">
+                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                            <img class="img-fluid" src="~/Images/589602ddcba9841eabab60d8.png" alt="">
+                        </div>
+                        <div class="col-lg-6 mb-0 d-flex align-items-center">
+                            <div class="text-align-left">
+                                <h1 class="h1">Stendal</h1>
+                                <h3 class="h2">Yazar</h3>
+                                <p>
+                                    Sadece çok akıllı kadınlar, sade bir stile sahip olmayı başarabilirler. Stendal
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="prev">
+            <i class="fas fa-chevron-left"></i>
+        </a>
+        <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="next">
+            <i class="fas fa-chevron-right"></i>
+        </a>
+    </div>
+    <!-- End Banner Hero -->
+    <!-- Start Categories of The Month -->
+    <section class="container py-5">
+        <div class="row text-center pt-3">
+            <div class="col-lg-6 m-auto">
+                <h1 class="h1">Ayın En Çok Satan Kategorileri</h1>
+                <p>
+                    Kalite Ve Güvenin Tek Adresi RibeLLa Butik 
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-4 p-5 mt-3">
+                <a href="@Url.Action("CategoryDetail","Category", new {id = 3})"><img src="~/Images/Mont.png" class="rounded-circle img-fluid border"></a>
+                <h5 class="text-center mt-3 mb-3">Montlar</h5>
+                <p class="text-center"><a class="btn btn-success">Alişverişe Başla</a></p>
+            </div>
+            <div class="col-12 col-md-4 p-5 mt-3">
+                <a href="@Url.Action("CategoryDetail","Category", new {id = 4})"><img src="~/Images/Elbise.jpg" class="rounded-circle img-fluid border"></a>
+                <h2 class="h5 text-center mt-3 mb-3">Elbiseler</h2>
+                <p class="text-center"><a class="btn btn-success">Alişverişe Başla</a></p>
+            </div>
+            <div class="col-12 col-md-4 p-5 mt-3">
+                <a href="@Url.Action("CategoryDetail","Category", new {id = 6})"><img src="~/Images/Kazak.jpg" class="rounded-circle img-fluid border"></a>
+                <h2 class="h5 text-center mt-3 mb-3">Kazaklar</h2>
+                <p class="text-center"><a class="btn btn-success">Alişverişe Başla</a></p>
+            </div>
+        </div>
+    </section>
+    <!-- End Categories of The Month -->
+    <!-- Start Footer -->
+    <footer class="bg-dark" id="tempaltemo_footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">Ribella</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt fa-fw"></i>
+                           Eskişehir/Odunpazarı
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-fw"></i>
+                            <a class="text-decoration-none" href="tel:0222 222 22 ">0222 222 22</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope fa-fw"></i>
+                            <a class="text-decoration-none" href="mailto:Ribella@gmail.com">Ribella@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row text-light mb-4">
+                <div class="col-12 mb-3">
+                    <div class="w-100 my-3 border-top border-light"></div>
+                </div>
+                <div class="col-auto me-auto">
+                    22
+                    <ul class="list-inline text-left footer-icons">
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="http://facebook.com/"><i class="fab fa-facebook-f fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://twitter.com/"><i class="fab fa-twitter fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://www.linkedin.com/"><i class="fab fa-linkedin fa-lg fa-fw"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- End Footer -->
+    <!-- Start Script -->
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/templatemo.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <!-- End Script -->
+</body>
+</html>

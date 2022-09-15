@@ -1,0 +1,151 @@
+﻿@using ribellabutik.Models
+<!DOCTYPE html>
+@{
+    Db_model db = new Db_model();
+    List<UserCard> cartList = new List<UserCard>();
+
+
+    if (Session["user"] != null)
+    {
+        User u = Session["user"] as User;
+        int id = u.ID;
+        cartList = db.UserCards.Where(x => x.User_ID == id).ToList();
+    }
+}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/custom.css" rel="stylesheet" />
+    <link href="~/Content/css/fontawesome.css" rel="stylesheet" />
+    <link href="~/Content/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="~/Content/css/slick-theme.css" rel="stylesheet" />
+    <link href="~/Content/css/slick-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/css/slick.min.css" rel="stylesheet" />
+    <link href="~/Content/css/templatemo.css" rel="stylesheet" />
+    <link href="~/Content/css/templatemo.min.css" rel="stylesheet" />
+    <script src="~/Content/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/js/custom.js"></script>
+    <script src="~/Content/js/jquery-1.11.0.min.js"></script>
+    <script src="~/Content/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="~/Content/js/slick.min.js"></script>
+    <script src="~/Content/js/templatemo.js"></script>
+    <script src="~/Content/js/templatemo.min.js"></script>
+    <a href="~/Content/webfonts/fa-brands-400.eot"></a>
+    <a href="~/Content/webfonts/fa-brands-400.ttf"></a>
+    <a href="~/Content/webfonts/fa-brands-400.woff"></a>
+    <a href="~/Content/webfonts/fa-brands-400.woff2"></a>
+    <a href="~/Content/webfonts/fa-regular-400.eot"></a>
+    <a href="~/Content/webfonts/fa-regular-400.ttf"></a>
+    <a href="~/Content/webfonts/fa-regular-400.woff"></a>
+    <a href="~/Content/webfonts/fa-regular-400.woff2"></a>
+    <a href="~/Content/webfonts/fa-solid-900.eot"></a>
+    <a href="~/Content/webfonts/fa-solid-900.ttf"></a>
+    <a href="~/Content/webfonts/fa-solid-900.woff"></a>
+    <a href="~/Content/webfonts/fa-solid-900.woff2"></a>
+    <a href="~/Content/webfonts/slick.eot"></a>
+    <a href="~/Content/webfonts/slick.ttf"></a>
+    <a href="~/Content/webfonts/slick.woff"></a>
+</head>
+<body>
+    <div class="container">
+        <!-- Start Top Nav -->
+        <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
+            <div class="container text-light">
+                <div class="w-100 d-flex justify-content-between">
+                    <div>
+                        <i class="fa fa-envelope mx-2"></i>
+                        <a class="navbar-sm-brand text-light text-decoration-none" href="#">ribellabutik@company.com</a>
+                        <i class="fa fa-phone mx-2"></i>
+                        <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340">0222 222 22 22</a>
+                    </div>
+                    <div>
+                        <a class="text-light" href="https://github.com/Mehmetyr" target="_blank"><i class="fab fa-github fa-sm fa-fw me-2"></i></a>
+                        <a class="text-light" href="https://www.linkedin.com/in/mehmet-y%C3%B6r%C3%BC-15a30623a/" target="_blank"><i class="fab fa-linkedin fa-sm fa-fw"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <a class="navbar-brand text-success logo h2 align-self-center" href="index.html">
+                Ribella Butik
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index","Home")">Anasayfa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Shop","Home")">Alışveriş</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index","Category")">Kategoriler</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Contact","Home")">İletişim</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("OrderDetail","Product")">İletişim</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar align-self-center d-flex">
+                    
+
+                        @if (Session["user"] == null)
+                        {
+                            <div class="input-group">
+                                <a class="nav-icon position-relative text-decoration-none" href="@Url.Action("Login","User")">
+                                    <i class="fa fa-fw fa-sign-in-alt text-dark mr-1"></i>
+                                    <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
+                                </a>
+                                <a class="nav-icon position-relative text-decoration-none" href="@Url.Action("SingUp","User")">
+                                    <i class="fa fa-fw fa-users text-dark mr-3"></i>
+                                    <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
+                                </a>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="input-group">
+                                <a class="nav-icon position-relative text-decoration-none" href="@Url.Action("Index","UserCard")">
+                                    <i class="fa fa-fw fa-shopping-basket text-dark mr-1"></i>
+                                    <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
+                                </a>
+                                <a class="nav-icon position-relative text-decoration-none" href="@Url.Action("Index","Favorite")">
+                                    <i class="fa fa-fw fa-star text-dark mr-3"></i>
+                                    <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
+                                </a>
+                                <a class="nav-icon position-relative text-decoration-none" href="@Url.Action("Logout","User")">
+                                    <i class="fa fa-fw fa-sign-out-alt text-dark mr-3"></i>
+                                    <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
+                                </a>
+                            </div>
+                        }
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Close Header -->
+    <div>
+        @RenderBody()
+    </div>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

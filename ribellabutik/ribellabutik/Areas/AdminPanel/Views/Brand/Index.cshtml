@@ -1,0 +1,35 @@
+﻿@model IEnumerable<ribellabutik.Models.Brand>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/AdminPanel/Views/Shared/_LayoutPage1.cshtml";
+}
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Marka Listesi</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+        <a href="@Url.Action("CreateBrand","Brand")" class="btn btn-sm btn-outline-dark">Marka Ekle + </a> @*Url action bizi category foldorındakı createcetegory e gönder anlamında*@
+    </div>
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.ID)</th>
+            <th>@Html.DisplayNameFor(model => model.Name)</th>
+            <th>@Html.DisplayNameFor(model => model.status)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.Name</td>
+                <td>@item.status</td>
+                <td>
+                    <a href="@Url.Action("EditBrand","Brand",new {id = item.ID})" class="btn btn-sm btn-warning">Güncelle</a> @*Category ıcındekı edıtcategory ye gıt ve ıd sını alıp gıt*@
+                    <a href="@Url.Action("DeleteBrand","Brand",new {id = item.ID})" class="btn btn-sm btn-danger">Sil</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>

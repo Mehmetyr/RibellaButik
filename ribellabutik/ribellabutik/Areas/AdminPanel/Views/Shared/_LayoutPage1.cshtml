@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/dashboard.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="@Url.Action("Index","Home")">RibeLLa Butik</a>
+        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="flex-shrink-0 dropdown d-none d-md-flex mx-3">
+            <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="true">
+                <img src="~/Areas/AdminPanel/Images/UsingImages/WhatsApp Image 2022-07-25 at 22.47.57.jpeg" alt="mdo" class="rounded-circle" width="32" height="32">
+            </a>
+            <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(-112px, 34px);" data-popper-placement="bottom-end">
+                <li><a class="dropdown-item" href="@Url.Action("Index","Admin")">Profilim</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="@Url.Action("LogOut","ManagerLogin")">Çıkış</a></li>
+            </ul>
+        </div>
+    </header>
+    <nav class="py-2 bg-light border-bottom d-md-none">
+        <div class="container d-flex flex-wrap">
+            <ul class="nav">
+                <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Profil</a></li>
+                <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Çıkış</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse mt-3">
+                <div class="position-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index","Home")">
+                                <span data-feather="home"></span>
+                                Anasayfa
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index","Category")">
+                                <span data-feather="home"></span>
+                                Kategori İşlemleri
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index","Brand")">
+                                <span data-feather="home"></span>
+                                Marka İşlemleri
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index","Product")">
+                                <span data-feather="home"></span>
+                                Ürün İşlemleri
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("OrderDetail","Product")">
+                                <span data-feather="home"></span>
+                                Şipariş Edilen Ürünler
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

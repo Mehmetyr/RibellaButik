@@ -1,0 +1,17 @@
+C:\Users\acer\source\repos\RibellaButikForm\RibellaButikForm\bin\Debug\RibellaButikForm.exe.config
+C:\Users\acer\source\repos\RibellaButikForm\RibellaButikForm\bin\Debug\RibellaButikForm.exe
+C:\Users\acer\source\repos\RibellaButikForm\RibellaButikForm\bin\Debug\RibellaButikForm.pdb
+C:\Users\acer\source\repos\RibellaButikForm\RibellaButikForm\bin\Debug\EntityFramework.dll
+C:\Users\acer\source\repos\RibellaButikForm\RibellaButikForm\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\acer\source\repos\RibellaButikForm\RibellaButikForm\bin\Debug\EntityFramework.xml
+C:\Users\acer\source\repos\RibellaButikForm\RibellaButikForm\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\acer\source\repos\RibellaButikForm\RibellaButikForm\obj\Debug\RibellaButikForm.csproj.AssemblyReference.cache
+C:\Users\acer\source\repos\RibellaButikForm\RibellaButikForm\obj\Debug\RibellaButikForm.MainForm.resources
+C:\Users\acer\source\repos\RibellaButikForm\RibellaButikForm\obj\Debug\RibellaButikForm.Properties.Resources.resources
+C:\Users\acer\source\repos\RibellaButikForm\RibellaButikForm\obj\Debug\RibellaButikForm.csproj.GenerateResource.cache
+C:\Users\acer\source\repos\RibellaButikForm\RibellaButikForm\obj\Debug\RibellaButikForm.csproj.CoreCompileInputs.cache
+C:\Users\acer\source\repos\RibellaButikForm\RibellaButikForm\obj\Debug\RibellaButikForm.exe
+C:\Users\acer\source\repos\RibellaButikForm\RibellaButikForm\obj\Debug\RibellaButikForm.pdb
+C:\Users\acer\source\repos\RibellaButikForm\RibellaButikForm\obj\Debug\RibellaButikForm.KategoriForm.resources
+C:\Users\acer\source\repos\RibellaButikForm\RibellaButikForm\obj\Debug\RibellaButikForm.ProductForm.resources
+C:\Users\acer\source\repos\RibellaButikForm\RibellaButikForm\obj\Debug\RibellaButikForm.Brands.resources

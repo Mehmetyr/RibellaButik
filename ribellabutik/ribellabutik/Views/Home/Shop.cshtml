@@ -1,0 +1,156 @@
+﻿@model IEnumerable<ribellabutik.Models.Product>
+@{
+    ViewBag.Title = "Shop";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/custom.css" rel="stylesheet" />
+    <link href="~/Content/css/fontawesome.css" rel="stylesheet" />
+    <link href="~/Content/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="~/Content/css/slick-theme.css" rel="stylesheet" />
+    <link href="~/Content/css/slick-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/css/slick.min.css" rel="stylesheet" />
+    <link href="~/Content/css/templatemo.css" rel="stylesheet" />
+    <link href="~/Content/css/templatemo.min.css" rel="stylesheet" />
+    <script src="~/Content/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/js/custom.js"></script>
+    <script src="~/Content/js/jquery-1.11.0.min.js"></script>
+    <script src="~/Content/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="~/Content/js/slick.min.js"></script>
+    <script src="~/Content/js/templatemo.js"></script>
+    <script src="~/Content/js/templatemo.min.js"></script>
+    <a href="~/Content/webfonts/fa-brands-400.eot"></a>
+    <a href="~/Content/webfonts/fa-brands-400.ttf"></a>
+    <a href="~/Content/webfonts/fa-brands-400.woff"></a>
+    <a href="~/Content/webfonts/fa-brands-400.woff2"></a>
+    <a href="~/Content/webfonts/fa-regular-400.eot"></a>
+    <a href="~/Content/webfonts/fa-regular-400.ttf"></a>
+    <a href="~/Content/webfonts/fa-regular-400.woff"></a>
+    <a href="~/Content/webfonts/fa-regular-400.woff2"></a>
+    <a href="~/Content/webfonts/fa-solid-900.eot"></a>
+    <a href="~/Content/webfonts/fa-solid-900.ttf"></a>
+    <a href="~/Content/webfonts/fa-solid-900.woff"></a>
+    <a href="~/Content/webfonts/fa-solid-900.woff2"></a>
+    <a href="~/Content/webfonts/slick.eot"></a>
+    <a href="~/Content/webfonts/slick.ttf"></a>
+    <a href="~/Content/webfonts/slick.woff"></a>
+</head>
+<body>
+ 
+    <!-- Modal -->
+    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="w-100 pt-1 mb-5 text-right">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Start Content -->
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="card shadow">
+                            <a href="@Url.Action("Detail","Product", new { id= item.ID})" class="link-secondary" style="text-decoration:none">
+                                <img src="~/Images/ProductImages/@item.CoverImage" class="card-img" />
+                                <div class="card-body">
+                                    <div style="min-height:100px;">
+                                        <b class="text-dark">@item.Name</b>
+                                        @if (item.Description.Length >= 80)
+                                        {
+                                            <p class="card-text">
+                                                @item.Description.Substring(0, 80);
+                                            </p> }
+                                        else
+                                        {
+                                            <p class="card-text">
+                                                @item.Description;
+                                            </p>}
+                                        <b class="text-dark">@item.Price ₺</b>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="card-footer">
+                                <div class="d-grid">
+                                    <a href="@Url.Action("Add","UserCard", new { id= item.ID})" class="btn btn-sm btn-dark">Sepete Ekle</a>
+                                    <a href="@Url.Action("Add", "Favorite", new { id = item.ID })" class="btn btn-sm btn-warning">Favorilere Ekle</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>}
+            </div>
+
+        </div>
+    </div>
+    </main>
+
+    <!-- End Content -->
+  
+    <!-- Start Footer -->
+    <footer class="bg-dark" id="tempaltemo_footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">Ribella</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt fa-fw"></i>
+                            123 Consectetur at ligula 10660
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-fw"></i>
+                            <a class="text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope fa-fw"></i>
+                            <a class="text-decoration-none" href="mailto:info@company.com">info@company.com</a>
+                        </li>
+                    </ul>
+                </div>               
+            </div>
+
+            <div class="row text-light mb-4">
+                <div class="col-12 mb-3">
+                    <div class="w-100 my-3 border-top border-light"></div>
+                </div>
+                <div class="col-auto me-auto">
+                    <ul class="list-inline text-left footer-icons">
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="http://facebook.com/"><i class="fab fa-facebook-f fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://twitter.com/"><i class="fab fa-twitter fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://www.linkedin.com/"><i class="fab fa-linkedin fa-lg fa-fw"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!-- End Footer -->
+    <!-- Start Script -->
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/templatemo.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <!-- End Script -->
+</body>
+</html>
+
